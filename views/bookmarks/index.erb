@@ -1,12 +1,18 @@
 <ol>
 
   <% @list.each do |bookmark| %>
-    <li> <%= bookmark %> </li>
+    <li>
+      <a href="<%= bookmark.url %>">
+      <%= bookmark.title %>
+      </a> 
+    </li>
   <% end %>
 
 </ol>
 
+
 <form action='/add_bookmark' method='post'>
-  <input name="new_bookmark" type="text">
+  <input name="url" type="text" placeholder='URL'>
+  <input name="title" type="text" placeholder='Title'>
   <input type='submit' value="submit">
   </form>
